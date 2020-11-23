@@ -1,6 +1,7 @@
 package io
 
 import platform.posix.fgetc
+import platform.posix.pclose
 import platform.posix.popen
 
 actual fun execute (command : String) :String{
@@ -8,6 +9,7 @@ actual fun execute (command : String) :String{
     var x = ""
     while ( true){
         val e =  fgetc( a   )
+        @Suppress("SENSELESS_NULL_IN_WHEN")
         when(e){
             null -> break
             else ->{
@@ -15,5 +17,6 @@ actual fun execute (command : String) :String{
             }
         }
     }
+    pclose(a)
     return x
 }

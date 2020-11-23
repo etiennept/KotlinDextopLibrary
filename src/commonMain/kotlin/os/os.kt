@@ -1,6 +1,7 @@
 package os
 
-expect fun osName () : String
-expect fun hostName( ) :String
-expect fun homeDir() : String
-expect fun userName( ) : String
+expect val OsName  : String
+expect val HostName :String
+expect val UserDir : String
+expect val UserName : String
+expect val UserLang  :String

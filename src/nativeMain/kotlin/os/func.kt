@@ -9,12 +9,16 @@ import kotlin.native.concurrent.freeze
 import kotlinx.cinterop.CFunction as CFunction
 
 
-actual fun currentDir() = getwd(ByteArray(PATH_MAX).toCValues())!!.toKString()
+actual val RuntimeDir: String
+    get() = getwd(ByteArray(PATH_MAX).toCValues())!!.toKString()
+
 actual fun exit(int: Int) {
-     exit(int )
+    exit(int)
 }
 
-actual fun onExit( onExit :  ()->Unit  ) = atExit(onExit)
+actual fun onExit(onExit: () -> Unit) = atExit(onExit)
 
-actual fun runtime ()="Native"
-actual fun version ( ) = ""
+actual val Runtime
+    get() = RuntimeType.Native
+
+actual fun version() = ""

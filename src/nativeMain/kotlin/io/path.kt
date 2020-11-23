@@ -25,11 +25,11 @@ actual fun mkdir(path: String) {
     mkdir(path)
 }
 actual fun exist( path: String) = when (fopen( path  ,"r"  )){
-        null->{
-             when(opendir(path) ){
-                  null-> false
+    null->{
+        when(opendir(path) ){
+            null-> false
                 else -> true
-             }
+            }
         }
         else -> true
     }

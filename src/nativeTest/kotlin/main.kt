@@ -1,7 +1,5 @@
 import kotlinx.cinterop.*
-import platform.posix.atexit
-import platform.posix.fgetc
-import platform.posix.popen
+import platform.posix.*
 import kotlin.test.Test
 
 
@@ -9,6 +7,6 @@ import kotlin.test.Test
 
 @Test()
 fun main (){
-
+    println( )
 
 }

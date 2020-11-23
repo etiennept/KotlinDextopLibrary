@@ -1,14 +1,16 @@
 package os
 
 import com.sun.jdi.event.MethodExitEvent
+import java.lang.Runtime.getRuntime
 import kotlin.system.exitProcess
 
-actual fun currentDir(  ) =  System.getProperty("user.dir")!!
+actual val RuntimeDir
+             get (  ) =  System.getProperty("user.dir")!!
 actual fun  exit (  int  : Int ) {
      exitProcess(int )
 }
 actual fun onExit(onExit : ()->Unit ){
-     Runtime.getRuntime().addShutdownHook(
+     getRuntime().addShutdownHook(
           object : Thread() {
                override fun run() {
                     onExit()
@@ -16,5 +18,6 @@ actual fun onExit(onExit : ()->Unit ){
           }
      )
 }
-actual fun runtime() = "JVM"
+actual val Runtime
+     get() = RuntimeType.JVM
 actual fun version() =System.getProperty("java.version")!!

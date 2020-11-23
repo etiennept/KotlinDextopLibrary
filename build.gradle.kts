@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.4.20-RC"
+    kotlin("multiplatform") version "1.4.20"
     `maven-publish`
 }
 
@@ -21,11 +21,6 @@ kotlin {
         testRuns["test"].executionTask.configure {
             useJUnit()
         }
-
-
-
-
-
     }
     val hostOs = System.getProperty("os.name")
     val isMingwX64 = hostOs.startsWith("Windows")
