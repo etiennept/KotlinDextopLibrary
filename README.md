@@ -1,2 +1,8 @@
 # KotlinDextopLibrary
-This library implement basic function for "kotlin Dextop"  running in jvm , nodeJs  and native   
+For importing in this project write  this code in your build.gradle  
+<code>
+  implementation "kotlin.multiplatform:kotlin-dextop-standard-library:0.1.0"
+</code>
+
+
+
